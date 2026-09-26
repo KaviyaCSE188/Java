@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class City
+{
+    public static void main(String args[])
+    {
+        ArrayList<String> cities = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+
+        cities.add("Virudhunagar");
+        cities.add("Kovilpatti");
+        cities.add("Madurai");
+        cities.add("Chennai");
+
+        System.out.println("ArrayList:" + cities);
+
+        cities.add(2, "Vilathikulam");
+
+        System.out.println("Cities after inserting Salem at index 2:" + cities);
+
+        System.out.println("\nEnter a city name to search:");
+
+        String searchCity = sc.nextLine();
+
+        if (cities.contains(searchCity))
+        {
+            System.out.println(searchCity + " is present in this list");
+        }
+        else
+        {
+            System.out.println(searchCity + " is not present in this list");
+        }
+
+        System.out.println("Enter a starting letter:");
+
+        String letter = sc.nextLine();
+
+        System.out.println("Cities starting with " + letter + ":");
+
+        for (String city : cities)
+        {
+            if (city.toUpperCase().startsWith(letter.toUpperCase()))
+            {
+                System.out.println(city);
+            }
+        }
+
+        sc.close();
+    }
+}
