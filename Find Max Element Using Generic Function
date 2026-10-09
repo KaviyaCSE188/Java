@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class GenericMaximumAllTypes
+{
+    public static <T extends Comparable<T>> T maximum(T a, T b, T c)
+    {
+        T max = a;
+
+        if (b.compareTo(max) > 0)
+            max = b;
+
+        if (c.compareTo(max) > 0)
+            max = c;
+
+        return max;
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println("Integer maximum:" + maximum(25, 40, 55));
+
+        System.out.println("Float maximum:" + maximum(10.5f, 8.8f, 55.44f));
+
+        System.out.println("Double maximum:" + maximum(12.5, 25.7, 18.2));
+
+        System.out.println("Character maximum:" + maximum("A", "Z", "U"));
+
+        System.out.println("String Maximum:" + maximum("Apple", "Mango", "Banana"));
+    }
+}
